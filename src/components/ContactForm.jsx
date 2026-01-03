@@ -86,29 +86,23 @@ export function ContactForm() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    // Encode form data as application/x-www-form-urlencoded for Netlify
+    // Create FormData object (supports multipart/form-data for files)
     const formData = new FormData(e.target);
-    const data = {};
     
-    // Convert FormData to object
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
-
     // Add form-name field (required by Netlify)
-    data['form-name'] = 'contact';
+    formData.append('form-name', 'contact');
 
-    // Encode as application/x-www-form-urlencoded
-    const encoded = Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
+    // If there's a file selected, ensure it's included
+    if (file && mode === 'upload') {
+      formData.set('file', file);
+    }
 
     try {
-      // Submit to Netlify
+      // Submit to Netlify with multipart/form-data (no need to set Content-Type header)
+      // Browser will automatically set it with the correct boundary
       await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encoded
+        body: formData
       });
 
       // Show success message
@@ -297,6 +291,7 @@ export function ContactForm() {
                 <input
                   ref={fileInputRef}
                   type="file"
+                  name="file"
                   onChange={onFileChange}
                   className="hidden"
                   accept=".pdf,.doc,.docx,.txt,.rtf,.xlsx,.ppt,.pptx,.csv"
