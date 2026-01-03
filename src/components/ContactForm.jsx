@@ -1,9 +1,10 @@
 import React, { useMemo, useRef, useState } from "react";
-import { Send, Upload, Link as LinkIcon, X, FileText } from "lucide-react";
+import { Send, Upload, Link as LinkIcon, X, FileText, CheckCircle } from "lucide-react";
 
 export function ContactForm() {
   const [mode, setMode] = useState("upload"); // "upload" | "link"
   const [isDragging, setIsDragging] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
@@ -83,28 +84,35 @@ export function ContactForm() {
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
-
-    // UI-only: tukaj ohraniš svojo obstoječo logiko pošiljanja.
-    // Če želiš dejanski upload, backend mora sprejeti multipart/form-data.
-    // Za zdaj samo pokažemo, kaj bi poslali:
-    const payload = {
-      ...form,
-      langPair: normalizeLangPair(form.langPair),
-      mode,
-      fileName: file?.name || "",
-    };
-
-    // nadomesti s svojim realnim pošiljanjem
-    console.log("CONTACT SUBMIT:", payload, file);
-
-    // Optional: reset
-    // setForm({ name:"", email:"", company:"", langPair:"", description:"", sampleLink:"" });
-    // setFile(null);
+    // For Netlify Forms in React, we need to handle the submission
+    // but let the native form submission happen
+    setSubmitted(true);
+    
+    // The form will submit naturally to Netlify
+    // No need to preventDefault() for Netlify forms
   };
 
+  // Show success message after submission
+  if (submitted) {
+    return (
+      <section id="contact" className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800 scroll-mt-20">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-cyan-500/50 rounded-lg p-12 backdrop-blur-sm shadow-lg">
+            <div className="h-16 w-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="h-8 w-8 text-cyan-400" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-4">Hvala za vaše povpraševanje!</h3>
+            <p className="text-gray-300">
+              Vaše sporočilo smo prejeli. Odgovorili vam bomo v 24 urah.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section id="contact" className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="contact" className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-6">
           Pošljite povpraševanje ali vzorec
@@ -145,7 +153,19 @@ export function ContactForm() {
             </button>
           </div>
 
-          <form onSubmit={onSubmit} className="space-y-5">
+          <form 
+            name="contact" 
+            method="POST" 
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={onSubmit} 
+            className="space-y-5"
+          >
+            {/* Hidden fields for Netlify */}
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="mode" value={mode} />
+            
             {/* Name */}
             <div>
               <label className="block text-sm font-semibold text-white/90 mb-2">Ime in priimek</label>
