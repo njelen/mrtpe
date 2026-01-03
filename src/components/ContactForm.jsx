@@ -83,13 +83,54 @@ export function ContactForm() {
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
-  const onSubmit = (e) => {
-    // For Netlify Forms in React, we need to handle the submission
-    // but let the native form submission happen
-    setSubmitted(true);
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    // Encode form data as application/x-www-form-urlencoded for Netlify
+    const formData = new FormData(e.target);
+    const data = {};
     
-    // The form will submit naturally to Netlify
-    // No need to preventDefault() for Netlify forms
+    // Convert FormData to object
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Add form-name field (required by Netlify)
+    data['form-name'] = 'contact';
+
+    // Encode as application/x-www-form-urlencoded
+    const encoded = Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+
+    try {
+      // Submit to Netlify
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encoded
+      });
+
+      // Show success message
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Napaka pri pošiljanju. Prosimo poskusite ponovno.');
+    }
+  };
+
+  const resetForm = () => {
+    setSubmitted(false);
+    setForm({
+      name: "",
+      email: "",
+      company: "",
+      langPair: "",
+      description: "",
+      sampleLink: "",
+    });
+    setFile(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   // Show success message after submission
@@ -102,9 +143,15 @@ export function ContactForm() {
               <CheckCircle className="h-8 w-8 text-cyan-400" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Hvala za vaše povpraševanje!</h3>
-            <p className="text-gray-300">
+            <p className="text-gray-300 mb-6">
               Vaše sporočilo smo prejeli. Odgovorili vam bomo v 24 urah.
             </p>
+            <button
+              onClick={resetForm}
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow hover:opacity-95 transition-opacity"
+            >
+              Pošlji novo sporočilo
+            </button>
           </div>
         </div>
       </section>
