@@ -31,7 +31,7 @@ export const Hero = () => {
           <div className="w-full max-w-3xl mx-auto rounded-lg border border-blue-500/20 overflow-hidden bg-slate-900/20 backdrop-blur-sm">
             <img
               src="/images/hero.png"
-              alt="Ilustracija: AI prevod in urejanje prevajalca"
+              alt="MTPE prevajanje - AI strojno prevajanje z naknadnim urejanjem prevajalca"
               className="w-full h-auto block"
               draggable="false"
               loading="eager"

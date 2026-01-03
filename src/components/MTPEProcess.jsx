@@ -47,7 +47,7 @@ export const MTPEProcess = () => {
             <div className="w-full aspect-[21/9] max-h-[320px] overflow-hidden rounded-lg bg-slate-950/30">
               <img
                 src="/images/process.png"
-                alt="MTPE proces"
+                alt="MTPE proces - od priprave do dostave prevoda s pomočjo AI"
                 className="w-full h-full object-contain"
                 loading="lazy"
                 draggable="false"

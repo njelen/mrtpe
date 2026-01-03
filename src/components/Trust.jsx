@@ -37,7 +37,7 @@ export const Trust = () => {
             <div className="w-full aspect-[4/5] max-h-[340px] overflow-hidden rounded-lg bg-slate-950/30">
               <img
                 src="/images/trust.png"
-                alt="Zaupanje in kakovost"
+                alt="Zaupanje in kakovost - profesionalne prevajalske storitve EUROCOMIT"
                 className="w-full h-full object-contain"
                 loading="lazy"
                 draggable="false"

@@ -27,7 +27,7 @@ export function Header() {
         <a href="#top" onClick={go("#top")} className="flex items-center gap-3">
           <img
             src="/images/eci3-logo-white.png"
-            alt="EuroComIT3"
+            alt="EUROCOMIT - Profesionalne prevajalske storitve"
             className="h-6 w-auto sm:h-7"
             draggable="false"
           />
