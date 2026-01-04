@@ -114,16 +114,55 @@ video {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b1222;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(30, 107, 214, 0.95) 0%, rgba(18, 179, 214, 0.9) 100%);
+  background: linear-gradient(180deg, #0ea5e9 0%, #06b6d4 100%);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(24, 91, 182, 0.98) 0%, rgba(16, 153, 182, 0.95) 100%);
+  background: linear-gradient(180deg, #0284c7 0%, #0891b2 100%);
+}
+
+/* Article content styling */
+.article-content h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.article-content h3 {
+  color: #22d3ee;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content p {
+  color: #d1d5db;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.article-content ul {
+  color: #d1d5db;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+}
+
+.article-content strong {
+  color: #ffffff;
+  font-weight: 600;
 }
 
 code {

@@ -8,7 +8,7 @@ import {
 export const FAQ = () => {
   const faqs = [
     {
-      question: 'Zakaj ne morem preprosto uporabiti ChatGPT ali Google Translate za prevod pogodbe?',
+      question: 'Zakaj ne morem preprosto uporabiti ChatGPT, Google Translate ali drugih AI prevajalnikov za prevod pogodbe?',
       answer:
         'Umetna inteligenca pogosto halucinira in spreminja pravni pomen besedil. Brez poznavanja izvornega in ciljnega jezika uporabnik teh napak ne more opaziti, kar vodi v visoka poslovna tveganja. AI orodja lahko: Zamenjajo "mora" z "lahko" (obveznost postane možnost), Spremenijo številke, datume ali veljavnostne roke, Dodajo ali izpustijo ključne klavzule, Zamenjajo stranke v pogodbi, Napačno prevedejo pravne termini, kar ima lahko resne posledice. Primer: AI je v eni pogodbi spremenil "dobavitelj je dolžan" v "dobavitelj lahko", kar je popolnoma spremenilo pravno odgovornost.',
     },

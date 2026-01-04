@@ -5,7 +5,7 @@ export const WhenAIHelps = () => {
     <section className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-6">
-          Ne vsak prevod potrebuje enak pristop
+          Vsak prevod ne potrebuje enakega pristopa
         </h2>
         
         <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-16">

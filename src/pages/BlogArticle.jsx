@@ -1,78 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { articlesData } from '../data/articlesData';
 
 export const BlogArticle = ({ articleId }) => {
-  const articles = {
-    'mtpe-in-pasti': {
-      title: 'MTPE in pasti surovega strojnega prevajanja',
-      date: '2025-01-15',
-      category: 'MTPE',
-      readTime: '5 min',
-      content: `
-        <h2>Uvod</h2>
-        <p>Vsebina članka bo dodana kmalu...</p>
-        
-        <h2>Kaj je surovo strojno prevajanje?</h2>
-        <p>Vsebina v pripravi...</p>
-        
-        <h2>Najpogostejše pasti</h2>
-        <p>Vsebina v pripravi...</p>
-        
-        <h2>Kako MTPE rešuje te izzive</h2>
-        <p>Vsebina v pripravi...</p>
-      `
-    },
-    'pravno-prevajanje-halucinacije': {
-      title: 'Pravno prevajanje in tveganje halucinacij LLM-ov',
-      date: '2025-01-20',
-      category: 'Pravno',
-      readTime: '7 min',
-      content: `
-        <h2>Uvod</h2>
-        <p>Vsebina članka bo dodana kmalu...</p>
-        
-        <h2>Kaj so halucinacije LLM?</h2>
-        <p>Vsebina v pripravi...</p>
-        
-        <h2>Tveganja v pravnem kontekstu</h2>
-        <p>Vsebina v pripravi...</p>
-      `
-    },
-    'tehnicni-prevodi-nemscina': {
-      title: 'Tehnični prevodi in nemščina: Varnostna tveganja',
-      date: '2025-01-25',
-      category: 'Tehnično',
-      readTime: '6 min',
-      content: `
-        <h2>Uvod</h2>
-        <p>Vsebina članka bo dodana kmalu...</p>
-        
-        <h2>Specifike tehnične nemščine</h2>
-        <p>Vsebina v pripravi...</p>
-        
-        <h2>Varnostna tveganja</h2>
-        <p>Vsebina v pripravi...</p>
-      `
-    },
-    'slovenscina-anglescina-bariera': {
-      title: 'Prevajanje slovenščina – angleščina: Jezikovna bariera',
-      date: '2025-02-01',
-      category: 'Jezikoslovje',
-      readTime: '5 min',
-      content: `
-        <h2>Uvod</h2>
-        <p>Vsebina članka bo dodana kmalu...</p>
-        
-        <h2>Najpogostejši izzivi</h2>
-        <p>Vsebina v pripravi...</p>
-        
-        <h2>Rešitve in najboljše prakse</h2>
-        <p>Vsebina v pripravi...</p>
-      `
-    }
-  };
-
-  const article = articles[articleId];
+  const article = articlesData[articleId];
 
   if (!article) {
     return (
@@ -118,20 +49,45 @@ export const BlogArticle = ({ articleId }) => {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-3">
               {article.title}
             </h1>
+            
+            {article.subtitle && (
+              <p className="text-xl text-gray-300 italic">
+                {article.subtitle}
+              </p>
+            )}
           </div>
 
           <div 
-            className="prose prose-invert prose-cyan max-w-none"
+            className="prose prose-invert prose-cyan max-w-none article-content"
             dangerouslySetInnerHTML={{ __html: article.content }}
-            style={{
-              color: '#d1d5db',
-              fontSize: '1.125rem',
-              lineHeight: '1.75'
-            }}
           />
+
+          {/* Related FAQs */}
+          {article.relatedFAQs && article.relatedFAQs.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-gray-700">
+              <h2 className="text-2xl font-bold text-white mb-6">Pogosta vprašanja</h2>
+              <div className="space-y-6">
+                {article.relatedFAQs.map((faq, idx) => (
+                  <div key={idx} className="bg-slate-900/50 border border-blue-500/20 rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-cyan-300 mb-3">{faq.question}</h3>
+                    <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-6 text-center">
+                <Link 
+                  to="/pogosta-vprasanja" 
+                  className="text-cyan-400 hover:text-cyan-300 underline transition-colors"
+                >
+                  Oglejte si vsa pogosta vprašanja →
+                </Link>
+              </div>
+            </div>
+          )}
 
           <div className="mt-12 pt-8 border-t border-gray-700">
             <p className="text-gray-400 text-sm italic">
