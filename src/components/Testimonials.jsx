@@ -3,29 +3,29 @@ import { Quote } from 'lucide-react';
 export const Testimonials = () => {
   const quotes = [
     {
-      text: "MTPE ni nadomestek za človeka – je orodje, ki mu omogoča, da je bolj učinkovit. Vendar le izkušen prevajalec razlikuje med 'skoraj pravilno' in 'popolnoma varno'.",
-      author: "Strokovnjak za prevajanje",
-      role: "Certificiran prevajalec"
+      text: "V pravnem in tehničnem prevajanju si ne moremo privoščiti tveganja halucinacij AI. EUROCOMIT, kot prevajalska agencija z dolgoletnimi izkušnjami v Sloveniji, zagotavlja človeško ekspertizo, ki razlikuje med kontekstom, pravno zavezujočimi termini in tehničnimi niansami – natančnost, ki je AI sistemi danes preprosto ne morejo doseči.",
+      author: "EUROCOMIT",
+      role: "Prevajalska agencija z dolgoletnimi izkušnjami v Sloveniji"
     },
     {
-      text: "Pri pravnih dokumentih je vsaka napaka lahko usodna. LLM halucinacije niso mit – so realnost, ki jo lahko prepreči le človek s pravnim znanjem.",
-      author: "Pravni prevajalec",
-      role: "Specialist za pravno prevajanje"
+      text: "Največja nevarnost AI prevajanja niso očitne napake, temveč subtilne, nevidne pomenske spremembe, ki lahko spremenijo pravni pomen dokumenta. EUROCOMIT kot zanesljiva prevajalska agencija v Sloveniji te kritične napake odpravi z večstopenjskim človeškim preverjanjem, ki ga nobena AI ne more nadomestiti.",
+      author: "EUROCOMIT",
+      role: "Zanesljiva prevajalska agencija v Sloveniji"
     },
     {
-      text: "Tehnična nemščina zahteva natančnost do zadnje vejice. AI lahko prevede stavek, ne more pa razumeti konteksta proizvodne varnosti.",
-      author: "Tehnični prevajalec",
-      role: "Nemščina ↔ Slovenščina"
+      text: "Medtem ko AI orodja obetajo hitrost, EUROCOMIT zagotavlja pravno in tehnično točnost, ki je umetna inteligenca zaradi halucinacij sama ne more doseči. Za certificirane prevode v Sloveniji velja zlati standard: človeška strokovnost, podprta s tehnologijo, ne nadomeščena z njo.",
+      author: "EUROCOMIT",
+      role: "Certificirani prevodi v Sloveniji"
     },
     {
-      text: "Jezikovne bariere med slovenščino in angleščino so subtilne, a ključne za poslovno komunikacijo. Človeška presoja tu ni opcija – je nujnost.",
-      author: "Poslovni prevajalec",
-      role: "Specialist za mednarodno komunikacijo"
+      text: "Pri EUROCOMIT razumemo, da je v poslovnih in pravnih prevodih odgovornost najpomembnejša. Kot strokovna prevajalska agencija v Sloveniji prevzemamo polno odgovornost za vsak prevod, medtem ko AI sistemi zaradi svoje narave ne morejo jamčiti za posledice svojih halucinacij in kontekstualnih napak.",
+      author: "EUROCOMIT",
+      role: "Strokovna prevajalska agencija v Sloveniji"
     },
     {
-      text: "Po desetih letih izkušenj lahko rečem: AI je odličen asistent, a odločitve še vedno sprejema človek. Varnost vedno pride pred hitrostjo.",
-      author: "Senior prevajalec",
-      role: "MTPE specialist"
+      text: "Varna pot do kakovostnega prevoda ni popolna avtomatizacija, ampak pametna kombinacija: AI kot orodje za podporo, človeška ekspertiza kot jamstvo natančnosti. EUROCOMIT kot zanesljiva prevajalska agencija v Sloveniji postavlja varnost na prvo mesto – vsak prevod preverijo certificirani prevajalci, ki prepoznajo in odpravijo nevidne napake, ki jih AI ne zaznajo.",
+      author: "EUROCOMIT",
+      role: "Zanesljiva prevajalska agencija v Sloveniji"
     }
   ];
 

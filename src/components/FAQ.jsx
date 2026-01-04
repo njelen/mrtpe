@@ -8,14 +8,14 @@ import {
 export const FAQ = () => {
   const faqs = [
     {
-      question: 'Kaj je MTPE in kako se razlikuje od klasičnega prevajanja?',
+      question: 'Zakaj ne morem preprosto uporabiti ChatGPT ali Google Translate za prevod pogodbe?',
       answer:
-        'MTPE (Machine Translation Post-Editing) pomeni, da AI najprej prevede besedilo, nato pa strokovnjak pregleda in popravi rezultat. To je hitrejše in cenejše od klasičnega prevajanja, kjer prevajalec začne od ničle.',
+        'Umetna inteligenca pogosto halucinira in spreminja pravni pomen besedil. Brez poznavanja izvornega in ciljnega jezika uporabnik teh napak ne more opaziti, kar vodi v visoka poslovna tveganja. AI orodja lahko: Zamenjajo "mora" z "lahko" (obveznost postane možnost), Spremenijo številke, datume ali veljavnostne roke, Dodajo ali izpustijo ključne klavzule, Zamenjajo stranke v pogodbi, Napačno prevedejo pravne termini, kar ima lahko resne posledice. Primer: AI je v eni pogodbi spremenil "dobavitelj je dolžan" v "dobavitelj lahko", kar je popolnoma spremenilo pravno odgovornost.',
     },
     {
-      question: 'Kakšna je razlika med light in full post-editingom?',
+      question: 'Kaj so AI halucinacije pri prevodih in kako pogosto se pojavljajo?',
       answer:
-        'Light post-editing popravi le očitne napake (pomen, skladnost), full post-editing pa temeljito pregleda tudi ton, stil in terminologijo – primerno za marketing in pomembne objavljene vsebine.',
+        'AI halucinacije so napake, kjer umetna inteligenca "izmisli" vsebino, ki je v izvirniku sploh ni. To se zgodi v 15-30% profesionalnih besedil, še pogosteje pa pri: Pravnih dokumentih (termini, ki jih AI ne pozna), Tehničnih specifikacijah (številke, modeli, kode), Medicinskih besedilih (diagnoze, doze zdravil), Finančnih poročilih. Največja težava: Halucinacije zvenijo povsem smiselno in jih brez poznavanja obeh jezikov ne morete opaziti. Celo izkušeni uporabniki AI se pogosto ne zavedajo, da je prevod napačen, ker deluje "logično".',
     },
     {
       question: 'Kateri jezikovni pari so na voljo?',

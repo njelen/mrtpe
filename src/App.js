@@ -14,6 +14,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { BlogList } from "@/pages/BlogList";
 import { BlogArticle } from "@/pages/BlogArticle";
+import { FullFAQPage } from "@/pages/FullFAQPage";
 
 function HomePage() {
   return (
@@ -69,6 +70,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:articleId" element={<BlogArticlePage />} />
+          <Route path="/pogosta-vprasanja" element={<FullFAQPage />} />
         </Routes>
 
         <Footer />
