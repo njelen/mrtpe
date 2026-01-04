@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   // Zapri meni na ESC
   useEffect(() => {
@@ -15,55 +18,67 @@ export function Header() {
   const go = (hash) => (e) => {
     e.preventDefault();
     setOpen(false);
-    const el = document.querySelector(hash);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    else window.location.hash = hash;
+    
+    if (isHomePage) {
+      // On homepage, smooth scroll to section
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      else window.location.hash = hash;
+    } else {
+      // On other pages, navigate to homepage with hash
+      window.location.href = '/' + hash;
+    }
+  };
+
+  // Helper function to get href for navigation links
+  const getNavHref = (hash) => {
+    return isHomePage ? hash : '/' + hash;
   };
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
-        <a href="#top" onClick={go("#top")} className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img
             src="/images/eci3-logo-white.png"
             alt="EUROCOMIT - Profesionalne prevajalske storitve"
             className="h-6 w-auto sm:h-7"
             draggable="false"
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-7 text-sm text-white/80 md:flex">
           <a
-            href="#proces"
+            href={getNavHref("#proces")}
             onClick={go("#proces")}
             className="transition hover:text-white"
           >
             MTPE
           </a>
           <a
-            href="#quiz"
+            href={getNavHref("#quiz")}
             onClick={go("#quiz")}
             className="transition hover:text-white"
           >
             Izbira prevoda
           </a>
-          <a
-            href="/blog"
+          <Link
+            to="/blog"
             className="transition hover:text-white"
           >
             Viri
-          </a>
+          </Link>
           <a
-            href="#faq"
+            href={getNavHref("#faq")}
             onClick={go("#faq")}
             className="transition hover:text-white"
           >
             FAQ
           </a>
           <a
-            href="#contact"
+            href={getNavHref("#contact")}
             onClick={go("#contact")}
             className="transition hover:text-white"
           >
@@ -75,14 +90,14 @@ export function Header() {
         <div className="flex items-center gap-2">
           {/* Desktop CTAs */}
           <a
-            href="#contact"
+            href={getNavHref("#contact")}
             onClick={go("#contact")}
             className="hidden h-9 items-center rounded-md border border-white/15 px-3 text-sm font-semibold text-white/90 transition hover:border-white/25 hover:text-white md:inline-flex"
           >
             Pošljite povpraševanje
           </a>
           <a
-            href="#quiz"
+            href={getNavHref("#quiz")}
             onClick={go("#quiz")}
             className="hidden h-9 items-center justify-center rounded-md bg-gradient-to-r from-sky-500 to-cyan-400 px-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:opacity-95 md:inline-flex"
           >
@@ -132,34 +147,35 @@ export function Header() {
           <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
             <div className="flex flex-col gap-2 text-sm text-white/85">
               <a
-                href="#proces"
+                href={getNavHref("#proces")}
                 onClick={go("#proces")}
                 className="rounded-md px-2 py-2 transition hover:bg-white/5 hover:text-white"
               >
                 MTPE
               </a>
               <a
-                href="#quiz"
+                href={getNavHref("#quiz")}
                 onClick={go("#quiz")}
                 className="rounded-md px-2 py-2 transition hover:bg-white/5 hover:text-white"
               >
                 Izbira prevoda
               </a>
-              <a
-                href="/blog"
+              <Link
+                to="/blog"
+                onClick={() => setOpen(false)}
                 className="rounded-md px-2 py-2 transition hover:bg-white/5 hover:text-white"
               >
                 Viri
-              </a>
+              </Link>
               <a
-                href="#faq"
+                href={getNavHref("#faq")}
                 onClick={go("#faq")}
                 className="rounded-md px-2 py-2 transition hover:bg-white/5 hover:text-white"
               >
                 FAQ
               </a>
               <a
-                href="#contact"
+                href={getNavHref("#contact")}
                 onClick={go("#contact")}
                 className="rounded-md px-2 py-2 transition hover:bg-white/5 hover:text-white"
               >
