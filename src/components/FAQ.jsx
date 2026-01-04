@@ -18,43 +18,9 @@ export const FAQ = () => {
         'Light post-editing popravi le očitne napake (pomen, skladnost), full post-editing pa temeljito pregleda tudi ton, stil in terminologijo – primerno za marketing in pomembne objavljene vsebine.',
     },
     {
-      question: 'Ali je MTPE primeren za moje pravne dokumente?',
-      answer:
-        'Ne. Za pravne, medicinske ali regulatorne dokumente priporočamo 100% človeški prevod zaradi visoke odgovornosti in možnih posledic napak.',
-    },
-    {
-      question: 'Koliko časa traja MTPE prevod?',
-      answer:
-        'Odvisno od obsega in zahtevnosti, običajno 24–72 ur. Za manjše projekte lahko celo hitreje.',
-    },
-    {
-      question: 'Ali je MTPE cenejši od klasičnega prevoda?',
-      answer:
-        'Da, MTPE je običajno 30–50% cenejši od klasičnega prevoda, ker AI opravi večino dela, človek pa opravi le kontrolo in popravke.',
-    },
-    {
       question: 'Kateri jezikovni pari so na voljo?',
       answer:
         'Pokrivamo vse glavne evropske jezike: angleščina, nemščina, italijanščina, hrvaščina, srbščina v kombinaciji s slovenščino. Za druge jezike nas kontaktirajte.',
-    },
-    {
-      question: 'Ali lahko dostavite v določeni obliki datoteke?',
-      answer:
-        'Da. Podpiramo Word, Excel, PowerPoint, PDF, InDesign, XML, HTML in druge formate. Prevod dostavimo v isti obliki kot izvirnik.',
-    },
-    {
-      question: 'Ali uporabljate moje termine in glosarje?',
-      answer:
-        'Da. Če imate obstoječe glosarje ali terminološke baze, jih integriramo v proces za dosledno terminologijo.',
-    },
-    {
-      question: 'Ali podpišete pogodbo o zaupnosti (NDA)?',
-      answer: 'Da, z veseljem podpišemo NDA pred začetkom projekta, če je to potrebno.',
-    },
-    {
-      question: 'Kako vem, ali potrebujem MTPE ali 100% človeški prevod?',
-      answer:
-        'Uporabite našo "izbiro prevoda" zgoraj ali nam pošljite povpraševanje – brezplačno vam svetujemo najboljši pristop za vaš projekt.',
     },
   ];
 

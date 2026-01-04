@@ -1,4 +1,5 @@
 import "@/App.css";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { WhenAIHelps } from "@/components/WhenAIHelps";
@@ -6,16 +7,17 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 import { MTPEProcess } from "@/components/MTPEProcess";
 import { Quiz } from "@/components/Quiz";
 import { Trust } from "@/components/Trust";
+import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { About } from "@/components/About";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import { BlogList } from "@/pages/BlogList";
+import { BlogArticle } from "@/pages/BlogArticle";
 
-function App() {
+function HomePage() {
   return (
-    <div className="App bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 min-h-screen">
-      <Header />
-
+    <>
       <div id="top">
         <Hero />
       </div>
@@ -35,6 +37,8 @@ function App() {
         <Trust />
       </div>
 
+      <Testimonials />
+
       <div id="faq">
         <FAQ />
       </div>
@@ -46,9 +50,30 @@ function App() {
       <div id="contact">
         <ContactForm />
       </div>
+    </>
+  );
+}
 
-      <Footer />
-    </div>
+function BlogArticlePage() {
+  const { articleId } = useParams();
+  return <BlogArticle articleId={articleId} />;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="App bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 min-h-screen">
+        <Header />
+        
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:articleId" element={<BlogArticlePage />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

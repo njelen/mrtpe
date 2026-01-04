@@ -50,6 +50,12 @@ export function Header() {
             Izbira prevoda
           </a>
           <a
+            href="/blog"
+            className="transition hover:text-white"
+          >
+            Viri
+          </a>
+          <a
             href="#faq"
             onClick={go("#faq")}
             className="transition hover:text-white"
@@ -138,6 +144,12 @@ export function Header() {
                 className="rounded-md px-2 py-2 transition hover:bg-white/5 hover:text-white"
               >
                 Izbira prevoda
+              </a>
+              <a
+                href="/blog"
+                className="rounded-md px-2 py-2 transition hover:bg-white/5 hover:text-white"
+              >
+                Viri
               </a>
               <a
                 href="#faq"
