@@ -43,7 +43,7 @@ export function Header() {
           <img
             src="/images/eci3-logo-white.png"
             alt="EUROCOMIT - Profesionalne prevajalske storitve"
-            className="h-6 w-auto sm:h-7"
+            className="h-9 w-auto sm:h-10"
             draggable="false"
           />
         </Link>

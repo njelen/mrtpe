@@ -13,11 +13,27 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 3000,
-    allowedHosts: 'all'
+    allowedHosts: true
   },
   preview: {
     host: '0.0.0.0',
     port: 3000,
-    allowedHosts: 'all'
+    allowedHosts: true
+  },
+  build: {
+    outDir: 'build'
+  },
+  publicDir: 'public',
+  esbuild: {
+    loader: 'jsx',
+    include: /src\/.*\.jsx?$/,
+    exclude: []
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx'
+      }
+    }
   }
 });

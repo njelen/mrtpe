@@ -37,32 +37,32 @@ export const articlesData = {
           <tbody>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Halucinacije</td>
-              <td class="border border-gray-700 px-4 py-2">Prisotne, neodkrite, semantično tekoče</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Prisotne, neodkrite, semantično tekoče</td>
               <td class="border border-gray-700 px-4 py-2">Odkrite in popravljene s strokovnim pregledom</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Terminološka konsistentnost</td>
-              <td class="border border-gray-700 px-4 py-2">Neskladna, naključna izbira sinonimov</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Neskladna, naključna izbira sinonimov</td>
               <td class="border border-gray-700 px-4 py-2">Zagotovljena z glosarjem in terminološko bazo</td>
             </tr>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Kontekstualna natančnost</td>
-              <td class="border border-gray-700 px-4 py-2">Splošna, lahko odstopa od izvirnika</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Splošna, lahko odstopa od izvirnika</td>
               <td class="border border-gray-700 px-4 py-2">Preverjena glede na originalni kontekst</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Odkrivanje napak</td>
-              <td class="border border-gray-700 px-4 py-2">Nemogoče brez jezikovnega znanja</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Nemogoče brez jezikovnega znanja</td>
               <td class="border border-gray-700 px-4 py-2">Strokovnjak odkriva vse vrste napak</td>
             </tr>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Jezikovna tekočnost</td>
-              <td class="border border-gray-700 px-4 py-2">Visoka -- ustvarja lažno zaupanje</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Visoka -- ustvarja lažno zaupanje</td>
               <td class="border border-gray-700 px-4 py-2">Visoka in vsebinsko točna</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Kvalitetna kontrola</td>
-              <td class="border border-gray-700 px-4 py-2">Brez preverjanja</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Brez preverjanja</td>
               <td class="border border-gray-700 px-4 py-2">Večstopenjski pregled in lektoriranje</td>
             </tr>
           </tbody>
@@ -155,32 +155,32 @@ export const articlesData = {
           <tbody>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Pravna terminologija</td>
-              <td class="border border-gray-700 px-4 py-2">Nekonsistentna, naključni sinonimi</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Nekonsistentna, naključni sinonimi</td>
               <td class="border border-gray-700 px-4 py-2">Strokovna, preverjena s pravnimi glosarji</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Halucinacije in izmišljene reference</td>
-              <td class="border border-gray-700 px-4 py-2">Prisotne, neodkrite, verodostojno zveneče</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Prisotne, neodkrite, verodostojno zveneče</td>
               <td class="border border-gray-700 px-4 py-2">Odpravljene s pravnim strokovnim pregledom</td>
             </tr>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Pravna veljavnost</td>
-              <td class="border border-gray-700 px-4 py-2">Vprašljiva ali neveljavna</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Vprašljiva ali neveljavna</td>
               <td class="border border-gray-700 px-4 py-2">Zagotovljena z usposobljenimi pravnimi prevajalci</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Kontekstualno razumevanje</td>
-              <td class="border border-gray-700 px-4 py-2">Površinsko, ne razume pravnega okvira</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Površinsko, ne razume pravnega okvira</td>
               <td class="border border-gray-700 px-4 py-2">Globoko, vključuje pravno logiko in namen</td>
             </tr>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Odgovornost za napake</td>
-              <td class="border border-gray-700 px-4 py-2">Brez odgovornosti</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Brez odgovornosti</td>
               <td class="border border-gray-700 px-4 py-2">Polna profesionalna odgovornost prevajalca</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Certificiranje in overjanje</td>
-              <td class="border border-gray-700 px-4 py-2">Ni možno</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Ni možno</td>
               <td class="border border-gray-700 px-4 py-2">Možno s certificiranim pravnim prevajalcem</td>
             </tr>
           </tbody>
@@ -293,32 +293,32 @@ export const articlesData = {
           <tbody>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Tehnična terminologija</td>
-              <td class="border border-gray-700 px-4 py-2">Nekonsistentna, napačne izbire izrazov</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Nekonsistentna, napačne izbire izrazov</td>
               <td class="border border-gray-700 px-4 py-2">Precizna, preverjena z industrijskimi standardi</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Razumevanje varnostnih tveganj</td>
-              <td class="border border-gray-700 px-4 py-2">Brez poznavanja konteksta varnosti</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Brez poznavanja konteksta varnosti</td>
               <td class="border border-gray-700 px-4 py-2">Tehnični strokovnjak razume posledice napak</td>
             </tr>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Prevod sestavljenk</td>
-              <td class="border border-gray-700 px-4 py-2">Pogosto napačen ali semantično nejasen</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Pogosto napačen ali semantično nejasen</td>
               <td class="border border-gray-700 px-4 py-2">Pravilno razčlenjen in kontekstualno ustrezen</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Numerične vrednosti in enote</td>
-              <td class="border border-gray-700 px-4 py-2">Lahko napačno prenesene ali zamenjane</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Lahko napačno prenesene ali zamenjane</td>
               <td class="border border-gray-700 px-4 py-2">Preverjene in konsistentne</td>
             </tr>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Skladnost s standardi (ISO, DIN, EN)</td>
-              <td class="border border-gray-700 px-4 py-2">Ne upošteva standardiziranih izrazov</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Ne upošteva standardiziranih izrazov</td>
               <td class="border border-gray-700 px-4 py-2">Zagotovljena skladnost z relevantnimi standardi</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Varnostna kritičnost</td>
-              <td class="border border-gray-700 px-4 py-2">Visoko tveganje za varnost uporabnikov</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Visoko tveganje za varnost uporabnikov</td>
               <td class="border border-gray-700 px-4 py-2">Minimalno tveganje, strokovno preverjeno</td>
             </tr>
           </tbody>
@@ -444,32 +444,32 @@ export const articlesData = {
           <tbody>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Slovnični spol</td>
-              <td class="border border-gray-700 px-4 py-2">Naključna izbira, pogosto napačna</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Naključna izbira, pogosto napačna</td>
               <td class="border border-gray-700 px-4 py-2">Preverjena glede na kontekst in spol osebe</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Dvojina</td>
-              <td class="border border-gray-700 px-4 py-2">Ignorirana ali napačno kot množina</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Ignorirana ali napačno kot množina</td>
               <td class="border border-gray-700 px-4 py-2">Pravilno uporabljena kjer je potrebna</td>
             </tr>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Vidski glagoli</td>
-              <td class="border border-gray-700 px-4 py-2">Napačna izbira vida</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Napačna izbira vida</td>
               <td class="border border-gray-700 px-4 py-2">Ustrezen vid glede na pomen</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Besedni red</td>
-              <td class="border border-gray-700 px-4 py-2">Nevtralen, ne ohranja poudarkov</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Nevtralen, ne ohranja poudarkov</td>
               <td class="border border-gray-700 px-4 py-2">Prilagojen za ohranjanje informacijske strukture</td>
             </tr>
             <tr>
               <td class="border border-gray-700 px-4 py-2 font-semibold">Kulturni kontekst</td>
-              <td class="border border-gray-700 px-4 py-2">Brez razumevanja kulturnih razlik</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Brez razumevanja kulturnih razlik</td>
               <td class="border border-gray-700 px-4 py-2">Upošteva kulturne konvencije obeh jezikov</td>
             </tr>
             <tr class="bg-slate-800/50">
               <td class="border border-gray-700 px-4 py-2 font-semibold">Register in formalnost</td>
-              <td class="border border-gray-700 px-4 py-2">Nekonsistenten ali neustrezen</td>
+              <td class="border border-gray-700 px-4 py-2 text-white">Nekonsistenten ali neustrezen</td>
               <td class="border border-gray-700 px-4 py-2">Prilagojen ciljni publiki in namenu</td>
             </tr>
           </tbody>
