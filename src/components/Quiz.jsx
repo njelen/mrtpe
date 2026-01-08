@@ -13,7 +13,7 @@ export const Quiz = () => {
       question: 'Kakšen je namen prevoda?',
       options: [
         { value: 'internal', label: 'Interno komuniciranje' },
-        { value: 'public', label: 'Objava navzven' },
+        { value: 'public', label: 'Javna objava' },
         { value: 'high-risk', label: 'Visoko tveganje (pravni, medicinski dokumenti)' }
       ]
     },
