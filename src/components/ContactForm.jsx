@@ -30,7 +30,6 @@ export function ContactForm() {
   };
 
   const normalizeLangPair = (value) => {
-    // zamenjaj puščice/različne oblike v en “ - ”
     return value
       .replaceAll("→", "-")
       .replaceAll("->", "-")
@@ -49,7 +48,6 @@ export function ContactForm() {
   const setPickedFile = (f) => {
     if (!f) return;
     setFile(f);
-    // če izbere upload, počisti link, da ni zmede
     setForm((p) => ({ ...p, sampleLink: "" }));
   };
 
@@ -86,27 +84,27 @@ export function ContactForm() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    // Create FormData object (supports multipart/form-data for files)
     const formData = new FormData(e.target);
     
-    // Add form-name field (required by Netlify)
-    formData.append('form-name', 'contact');
-
-    // If there's a file selected, ensure it's included
     if (file && mode === 'upload') {
       formData.set('file', file);
     }
 
     try {
-      // Submit to Netlify with multipart/form-data (no need to set Content-Type header)
-      // Browser will automatically set it with the correct boundary
-      await fetch('/', {
+      // Poslano na tvoj Formspree endpoint
+      const response = await fetch('https://formspree.io/f/xreeezlz', {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
 
-      // Show success message
-      setSubmitted(true);
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        throw new Error('Napaka pri pošiljanju na Formspree');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       alert('Napaka pri pošiljanju. Prosimo poskusite ponovno.');
@@ -127,7 +125,6 @@ export function ContactForm() {
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
-  // Show success message after submission
   if (submitted) {
     return (
       <section id="contact" className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800 scroll-mt-20">
@@ -164,7 +161,6 @@ export function ContactForm() {
         </p>
 
         <div className="max-w-2xl mx-auto bg-gradient-to-br from-slate-800/70 to-slate-900/70 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-          {/* Mode switch */}
           <div className="flex items-center justify-center gap-2 mb-6">
             <button
               type="button"
@@ -195,19 +191,11 @@ export function ContactForm() {
           </div>
 
           <form 
-            name="contact" 
-            method="POST" 
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
             onSubmit={onSubmit} 
             className="space-y-5"
           >
-            {/* Hidden fields for Netlify */}
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="bot-field" />
             <input type="hidden" name="mode" value={mode} />
             
-            {/* Name */}
             <div>
               <label className="block text-sm font-semibold text-white/90 mb-2">Ime in priimek</label>
               <input
@@ -220,13 +208,13 @@ export function ContactForm() {
               />
             </div>
 
-            {/* Email */}
             <div>
               <label className="block text-sm font-semibold text-white/90 mb-2">
                 E-naslov <span className="text-cyan-300">*</span>
               </label>
               <input
                 name="email"
+                type="email"
                 value={form.email}
                 onChange={onChange}
                 className="w-full rounded-md bg-slate-950/40 border border-white/10 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
@@ -236,7 +224,6 @@ export function ContactForm() {
               />
             </div>
 
-            {/* Company */}
             <div>
               <label className="block text-sm font-semibold text-white/90 mb-2">Podjetje</label>
               <input
@@ -249,7 +236,6 @@ export function ContactForm() {
               />
             </div>
 
-            {/* Lang pair */}
             <div>
               <label className="block text-sm font-semibold text-white/90 mb-2">
                 Jezikovni par <span className="text-cyan-300">*</span>
@@ -266,7 +252,6 @@ export function ContactForm() {
               <p className="mt-2 text-xs text-white/50">IZVORNI - CILJNI JEZIK (npr. EN - SL)</p>
             </div>
 
-            {/* Description */}
             <div>
               <label className="block text-sm font-semibold text-white/90 mb-2">
                 Opis projekta <span className="text-cyan-300">*</span>
@@ -281,7 +266,6 @@ export function ContactForm() {
               />
             </div>
 
-            {/* Upload OR Link */}
             {mode === "upload" ? (
               <div>
                 <label className="block text-sm font-semibold text-white/90 mb-2">
@@ -333,11 +317,6 @@ export function ContactForm() {
                     )}
                   </div>
                 </div>
-
-               <p className="mt-2 text-xs text-white/50">
-  Če datoteke ne želite naložiti, izberite zavihek »Povezava« in prilepite URL do dokumenta (npr. Google Drive/Dropbox).
-</p>
-
               </div>
             ) : (
               <div>
@@ -351,13 +330,9 @@ export function ContactForm() {
                   className="w-full rounded-md bg-slate-950/40 border border-white/10 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
                   placeholder="https://drive.google.com/…"
                 />
-                <p className="mt-2 text-xs text-white/50">
-                  Google Drive / Dropbox / OneDrive ali drug URL.
-                </p>
               </div>
             )}
 
-            {/* Submit */}
             <button
               type="submit"
               className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-600 to-cyan-600 px-4 py-3 text-sm font-semibold text-white shadow hover:opacity-95"
